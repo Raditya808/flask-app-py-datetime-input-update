@@ -15,22 +15,22 @@ def index():
 # rute kedua menghitung jarak antarq tanggal hari ini dan user 
 @app.route("/inputtes",methods=["GET","POST"])
 def index2():
+     hari_ini = dt.date.today()
      if request.method == "POST":
         tahun = int(request.form["tahun"])
         bulan = int(request.form["bulan"])
         hari = int(request.form['hari'])
 
         full_data = dt.date(tahun,bulan,hari)
-        waktu_sekarang = dt.date.today()
-        selisih_waktu = waktu_sekarang - full_data
+        selisih_waktu = hari_ini - full_data
 
          #  mengitim data menggunakan syntax redirect url_for di rute hasil_jarak
         return redirect(url_for('hasil_jarak', 
                                 data_lahir=full_data, 
                                 dtful=selisih_waktu, 
-                                flldata=waktu_sekarang)) 
+                                )) 
  
-     return render_template("index2.html")
+     return render_template("index2.html",hari_ini=hari_ini)
 
 
 
