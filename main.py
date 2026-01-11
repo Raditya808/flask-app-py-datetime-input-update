@@ -70,10 +70,10 @@ def hasil_jarak():
     # ke hasil hasil_jarak.html
     data_lahir = request.args.get('data_lahir') # menerima parameter variabek dari rute index2 
     dtful = request.args.get('dtful') # menerima parameter variabek dari rute index2 
-    flldata = request.args.get('flldata') # menerima parameter variabek dari rute index2 
+
 
     # mengirim rute ke file htmll hasil_jarak.html
-    return render_template("hasil_jarak.html", data_lahir=data_lahir, dtful=dtful, flldata=flldata) # membuat parameter yang sama yang akan di kirim ke kode html hasil_jarak.html
+    return render_template("hasil_jarak.html", data_lahir=data_lahir, dtful=dtful) # membuat parameter yang sama yang akan di kirim ke kode html hasil_jarak.html
 
 
 
